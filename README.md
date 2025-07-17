@@ -1,6 +1,6 @@
-# Flash-ABB: antibody structure prediction at the speed of language
+# Flash-ABB: modelling antibody structures at the speed of language
 
-Installing:
+Installation:
 
 PyPi coming soon
 
