@@ -69,9 +69,11 @@ class FlashABBResult:
     def bb_coords(self):
         return self.output['positions'][-1,...,:4,:]
 
-    def to_pdbs(self, names, pdb_dir='.'):
+    def to_pdbs(self, names, pdb_dir='.', idxs=None):
         from .openfold.np.protein import Protein, to_pdb
         for i, name in enumerate(names):
+            if idxs is not None and i not in idxs:
+                continue
             features = featurize(self.seqs)
             residue_idx = features['res_idx'][i].unsqueeze(0)
             aatype = features['aatype'][i].unsqueeze(0)
@@ -80,7 +82,8 @@ class FlashABBResult:
             coords = coords.detach().cpu().numpy()
             residue_idx = residue_idx[0,...].detach().cpu().numpy()
             aatype = aatype[0,...].long().detach().cpu().numpy()
-            atom_mask = np.ones_like(coords[...,0])
+            atom_mask = self.mask[i].unsqueeze(dim=-1).expand(coords.shape[:-1])
+            atom_mask = atom_mask.detach().cpu().numpy()
             b_factors = np.zeros_like(atom_mask)
             prot = Protein(
                 aatype=aatype,
@@ -88,7 +91,7 @@ class FlashABBResult:
                 atom_mask=atom_mask,
                 residue_index=residue_idx + 1,
                 b_factors=b_factors,
-                chain_index=(residue_idx < 500).astype(int),
+                chain_index=(residue_idx >= 500).astype(int),
             )
             pdb_lines = to_pdb(prot)
             os.makedirs(pdb_dir, exist_ok=True)
