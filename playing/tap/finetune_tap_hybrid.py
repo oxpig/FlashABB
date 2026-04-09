@@ -24,20 +24,24 @@ DIR = os.path.dirname(__file__)
 class FlashABBEncoder(nn.Module):
     def __init__(self, device):
         super().__init__()
-        from flash_abb.util.model import load_model
+        from flash_abb.load_model import load_model
         self.flabb, _ = load_model("flash-abb")
         self.flabb.to(device)
-        self.device = device
+        self._device = device
         self.embed_dim = 128
 
     def forward(self, seqs):
         """Returns per-residue embeddings and mask."""
-        from flash_abb.util.model import featurize
-        batch = featurize(seqs, device=self.device)
-        with torch.no_grad():
-            out = self.flabb(batch)
-        single = out.output["single"]  # (batch, seq_len, 128)
-        mask = batch["aatype_pad_mask"]  # (batch, seq_len)
+        from flash_abb.model.flash_abb import featurize
+        features = featurize(seqs, self._device)
+        output = self.flabb.model(
+            {"single": features["single"]},
+            features["aatype"],
+            features["res_idx"],
+            features["mask"],
+        )
+        single = output["single"]  # (batch, seq_len, 128)
+        mask = features["mask"]  # (batch, seq_len)
         return single, mask
 
     def load_state_dict(self, state_dict):
@@ -59,15 +63,40 @@ class AbLang2Encoder(nn.Module):
         self.embed_dim = 480
 
     def forward(self, seqs):
-        """Returns per-residue embeddings and mask."""
+        """Returns per-residue embeddings and mask, with separator removed to align with FlashABB."""
         tokenized = self.ablang.tokenizer(
             seqs, pad=True, w_extra_tkns=False, device=self.device
         )
         with torch.no_grad():
             rescoding = self.ablang.AbRep(tokenized).last_hidden_states  # (batch, seq_len, 480)
-        # Create mask from tokenized sequences (non-padding positions)
-        mask = tokenized != 0  # Assuming 0 is padding token
-        return rescoding, mask
+
+        # AbLang2 includes separator token (25 = "|"), FlashABB doesn't
+        # Remove separator to align sequences
+        sep_token_id = 25
+        is_sep = tokenized == sep_token_id  # (B, L)
+
+        batch_size, seq_len, embed_dim = rescoding.shape
+        embeddings_no_sep = []
+        masks_no_sep = []
+
+        for i in range(batch_size):
+            non_sep_mask = ~is_sep[i]
+            emb = rescoding[i][non_sep_mask]
+            embeddings_no_sep.append(emb)
+            mask = tokenized[i][non_sep_mask] != 0
+            masks_no_sep.append(mask)
+
+        # Pad to same length
+        max_len = max(e.size(0) for e in embeddings_no_sep)
+        rescoding_aligned = torch.zeros(batch_size, max_len, embed_dim, device=self.device)
+        mask_aligned = torch.zeros(batch_size, max_len, dtype=torch.bool, device=self.device)
+
+        for i, (emb, mask) in enumerate(zip(embeddings_no_sep, masks_no_sep)):
+            length = emb.size(0)
+            rescoding_aligned[i, :length] = emb
+            mask_aligned[i, :length] = mask
+
+        return rescoding_aligned, mask_aligned
 
     def load_state_dict(self, state_dict):
         self.ablang.AbRep.load_state_dict(state_dict)
@@ -104,11 +133,12 @@ class HybridTAPRegressor(nn.Module):
         """
         Args:
             flabb_emb: (batch, seq_len, 128) per-residue FlashABB embeddings
-            ablang_emb: (batch, seq_len, 480) per-residue AbLang2 embeddings
-            mask: (batch, seq_len) padding mask
+            ablang_emb: (batch, seq_len, 480) per-residue AbLang2 embeddings (separator removed)
+            mask: (batch, seq_len) padding mask from FlashABB
         Returns:
             (batch, 4) predictions
         """
+        # Both sequences should now be aligned (separator removed from AbLang2)
         # Concatenate per-residue embeddings
         combined = torch.cat([flabb_emb, ablang_emb], dim=-1)  # (batch, seq_len, 608)
 
@@ -116,7 +146,7 @@ class HybridTAPRegressor(nn.Module):
         per_residue_tap = self.fusion_mlp(combined)  # (batch, seq_len, 4)
 
         # Masked sum pooling - sum TAP contributions from all residues
-        mask_expanded = mask.unsqueeze(-1)  # (batch, seq_len, 1)
+        mask_expanded = mask.unsqueeze(-1).float()  # (batch, seq_len, 1)
         masked_tap = per_residue_tap * mask_expanded  # (batch, seq_len, 4)
         summed_tap = masked_tap.sum(dim=1)  # (batch, 4)
 
