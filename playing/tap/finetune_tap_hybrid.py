@@ -63,40 +63,15 @@ class AbLang2Encoder(nn.Module):
         self.embed_dim = 480
 
     def forward(self, seqs):
-        """Returns per-residue embeddings and mask, with separator removed to align with FlashABB."""
+        """Returns per-residue embeddings, mask, and tokenized sequences."""
         tokenized = self.ablang.tokenizer(
             seqs, pad=True, w_extra_tkns=False, device=self.device
         )
         with torch.no_grad():
             rescoding = self.ablang.AbRep(tokenized).last_hidden_states  # (batch, seq_len, 480)
-
-        # AbLang2 includes separator token (25 = "|"), FlashABB doesn't
-        # Remove separator to align sequences
-        sep_token_id = 25
-        is_sep = tokenized == sep_token_id  # (B, L)
-
-        batch_size, seq_len, embed_dim = rescoding.shape
-        embeddings_no_sep = []
-        masks_no_sep = []
-
-        for i in range(batch_size):
-            non_sep_mask = ~is_sep[i]
-            emb = rescoding[i][non_sep_mask]
-            embeddings_no_sep.append(emb)
-            mask = tokenized[i][non_sep_mask] != 0
-            masks_no_sep.append(mask)
-
-        # Pad to same length
-        max_len = max(e.size(0) for e in embeddings_no_sep)
-        rescoding_aligned = torch.zeros(batch_size, max_len, embed_dim, device=self.device)
-        mask_aligned = torch.zeros(batch_size, max_len, dtype=torch.bool, device=self.device)
-
-        for i, (emb, mask) in enumerate(zip(embeddings_no_sep, masks_no_sep)):
-            length = emb.size(0)
-            rescoding_aligned[i, :length] = emb
-            mask_aligned[i, :length] = mask
-
-        return rescoding_aligned, mask_aligned
+        # Create mask from tokenized sequences (non-padding positions)
+        mask = tokenized != 0  # Assuming 0 is padding token
+        return rescoding, mask, tokenized
 
     def load_state_dict(self, state_dict):
         self.ablang.AbRep.load_state_dict(state_dict)
@@ -129,25 +104,56 @@ class HybridTAPRegressor(nn.Module):
             nn.Linear(128, 4),  # Output 4 TAP properties per residue
         )
 
-    def forward(self, flabb_emb, ablang_emb, mask):
+    def forward(self, flabb_emb, flabb_mask, ablang_emb, ablang_tokenized):
         """
         Args:
-            flabb_emb: (batch, seq_len, 128) per-residue FlashABB embeddings
-            ablang_emb: (batch, seq_len, 480) per-residue AbLang2 embeddings (separator removed)
-            mask: (batch, seq_len) padding mask from FlashABB
+            flabb_emb: (batch, 230, 128) FlashABB embeddings (no separator)
+            flabb_mask: (batch, 230) FlashABB mask
+            ablang_emb: (batch, 231, 480) AbLang2 embeddings (with separator)
+            ablang_tokenized: (batch, 231) AbLang2 tokens
         Returns:
             (batch, 4) predictions
         """
-        # Both sequences should now be aligned (separator removed from AbLang2)
-        # Concatenate per-residue embeddings
-        combined = torch.cat([flabb_emb, ablang_emb], dim=-1)  # (batch, seq_len, 608)
+        batch_size = flabb_emb.size(0)
 
-        # Apply fusion MLP to each residue to get per-residue TAP predictions
-        per_residue_tap = self.fusion_mlp(combined)  # (batch, seq_len, 4)
+        # Find separator positions in AbLang2 (token 25 = "|")
+        sep_token_id = 25
+        is_sep = ablang_tokenized == sep_token_id
+        sep_positions = is_sep.long().argmax(dim=1)  # (batch,)
 
-        # Masked sum pooling - sum TAP contributions from all residues
-        mask_expanded = mask.unsqueeze(-1).float()  # (batch, seq_len, 1)
-        masked_tap = per_residue_tap * mask_expanded  # (batch, seq_len, 4)
+        # Insert zero padding at separator position for FlashABB
+        flabb_emb_list = []
+        flabb_mask_list = []
+
+        for i in range(batch_size):
+            sep_pos = sep_positions[i].item()
+
+            # Split and insert zero embedding at separator position
+            before = flabb_emb[i, :sep_pos]
+            after = flabb_emb[i, sep_pos:]
+            zero_emb = torch.zeros(1, 128, device=flabb_emb.device)
+            aligned_emb = torch.cat([before, zero_emb, after], dim=0)
+            flabb_emb_list.append(aligned_emb)
+
+            # Same for mask (zero at separator)
+            mask_before = flabb_mask[i, :sep_pos]
+            mask_after = flabb_mask[i, sep_pos:]
+            zero_mask = torch.zeros(1, dtype=torch.bool, device=flabb_mask.device)
+            aligned_mask = torch.cat([mask_before, zero_mask, mask_after], dim=0)
+            flabb_mask_list.append(aligned_mask)
+
+        flabb_emb_aligned = torch.stack(flabb_emb_list)
+        flabb_mask_aligned = torch.stack(flabb_mask_list)
+
+        # Concatenate aligned embeddings
+        combined = torch.cat([flabb_emb_aligned, ablang_emb], dim=-1)  # (batch, 231, 608)
+
+        # Apply fusion MLP
+        per_residue_tap = self.fusion_mlp(combined)  # (batch, 231, 4)
+
+        # Masked sum pooling
+        mask_expanded = flabb_mask_aligned.unsqueeze(-1).float()
+        masked_tap = per_residue_tap * mask_expanded
         summed_tap = masked_tap.sum(dim=1)  # (batch, 4)
 
         return summed_tap
@@ -253,13 +259,10 @@ def train_hybrid(
 
             # Get per-residue embeddings from both encoders
             flabb_emb, flabb_mask = flabb_encoder(seqs)
-            ablang_emb, ablang_mask = ablang_encoder(seqs)
-
-            # Use FlashABB mask (more reliable for antibody sequences)
-            mask = flabb_mask.float()
+            ablang_emb, ablang_mask, ablang_tokenized = ablang_encoder(seqs)
 
             # Hybrid prediction
-            pred = head(flabb_emb, ablang_emb, mask)
+            pred = head(flabb_emb, flabb_mask, ablang_emb, ablang_tokenized)
             loss = criterion(pred, targets_norm)
 
             optimizer.zero_grad()
@@ -283,9 +286,8 @@ def train_hybrid(
         with torch.no_grad():
             for seqs, targets in val_loader:
                 flabb_emb, flabb_mask = flabb_encoder(seqs)
-                ablang_emb, ablang_mask = ablang_encoder(seqs)
-                mask = flabb_mask.float()
-                pred_norm = head(flabb_emb, ablang_emb, mask)
+                ablang_emb, ablang_mask, ablang_tokenized = ablang_encoder(seqs)
+                pred_norm = head(flabb_emb, flabb_mask, ablang_emb, ablang_tokenized)
                 pred = pred_norm * tgt_std_d + tgt_mean_d
                 val_preds.append(pred.cpu())
                 val_actuals.append(targets)
@@ -363,9 +365,8 @@ def evaluate(flabb_encoder, ablang_encoder, head, test_set, tgt_mean, tgt_std, b
     with torch.no_grad():
         for seqs, targets in loader:
             flabb_emb, flabb_mask = flabb_encoder(seqs)
-            ablang_emb, ablang_mask = ablang_encoder(seqs)
-            mask = flabb_mask.float()
-            pred_norm = head(flabb_emb, ablang_emb, mask)
+            ablang_emb, ablang_mask, ablang_tokenized = ablang_encoder(seqs)
+            pred_norm = head(flabb_emb, flabb_mask, ablang_emb, ablang_tokenized)
             pred = pred_norm * tgt_std_d + tgt_mean_d
             all_pred.append(pred.cpu())
             all_actual.append(targets)
