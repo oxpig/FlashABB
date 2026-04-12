@@ -409,8 +409,8 @@ def main():
     if args.wandb:
         import wandb
         wandb.init(
-            project="tap-regression",
-            name="Hybrid-FlashABB-AbLang2",
+            project="tap-finetune",
+            name="Hybrid",
             config=vars(args),
         )
 
