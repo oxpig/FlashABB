@@ -20,6 +20,7 @@ class BERTCoords(nn.Module):
         emb_size: int = 128,
         dropout: float = 0.0,
         use_coords: bool = True,
+        device: str = 'cpu',
     ):
         super().__init__()
         self.emb_size = emb_size
@@ -27,7 +28,7 @@ class BERTCoords(nn.Module):
 
         # Imported lazily to avoid circular import (pretrained → BERTCoords → pretrained)
         from flash_abb.pretrained import pretrained as FlashABBPretrained
-        self.folder = FlashABBPretrained()
+        self.folder = FlashABBPretrained(device=device)
         self.folder.flabb.requires_grad_(False)
 
         self.alphabet = ABtokenizer()

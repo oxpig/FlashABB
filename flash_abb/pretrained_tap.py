@@ -1,8 +1,13 @@
+import os
+import numpy as np
 import torch
 from .load_model import fetch_sss, fetch_tap
 from .model.tokenizer import ABtokenizer
+from .model.flag_calibrator import FlagCalibrator
 
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+_CALIBRATOR_PATH = os.path.join(os.path.dirname(__file__), 'weights', 'flag_calibrators.pkl')
 
 
 class SSSResult:
@@ -24,12 +29,13 @@ class SSSResult:
 
 
 class TAPResult:
-    """Result from FlashTAP: four antibody developability scores."""
+    """Result from FlashTAP: four antibody developability scores and flag probabilities."""
 
     TAP_COLS = ['PSH', 'PPC', 'PNC', 'SFvCSP']
 
-    def __init__(self, tensor: torch.Tensor):
+    def __init__(self, tensor: torch.Tensor, flag_probs_array: np.ndarray | None = None):
         self._tensor = tensor
+        self._flag_probs_array = flag_probs_array  # (batch, 4) or None
 
     @property
     def tensor(self) -> torch.Tensor:
@@ -43,6 +49,30 @@ class TAPResult:
             {col: self._tensor[i, j].item() for j, col in enumerate(self.TAP_COLS)}
             for i in range(self._tensor.shape[0])
         ]
+
+    @property
+    def flag_probs(self) -> list[dict] | None:
+        """List of dicts (one per antibody) mapping property name → P(flag).
+
+        Returns None if no calibrator was loaded.
+        """
+        if self._flag_probs_array is None:
+            return None
+        return [
+            {col: float(self._flag_probs_array[i, j]) for j, col in enumerate(self.TAP_COLS)}
+            for i in range(self._flag_probs_array.shape[0])
+        ]
+
+    @property
+    def any_flag_prob(self) -> list[float] | None:
+        """P(any flag) for each antibody, assuming property independence.
+
+        Returns None if no calibrator was loaded.
+        """
+        if self._flag_probs_array is None:
+            return None
+        any_flag = 1 - np.prod(1 - self._flag_probs_array, axis=1)
+        return any_flag.tolist()
 
 
 def _tokenize(seqs, alphabet: ABtokenizer, device):
@@ -103,7 +133,9 @@ class pretrained_tap:
         from flash_abb import pretrained_tap
         tap = pretrained_tap()
         result = tap(['EVQL...|DIQL...'])
-        print(result.scores)   # [{'PSH': ..., 'PPC': ..., 'PNC': ..., 'SFvCSP': ...}]
+        print(result.scores)        # [{'PSH': ..., 'PPC': ..., 'PNC': ..., 'SFvCSP': ...}]
+        print(result.flag_probs)    # [{'PSH': 0.12, 'PPC': 0.03, 'PNC': 0.05, 'SFvCSP': 0.41}]
+        print(result.any_flag_prob) # [0.52]
     """
 
     def __init__(self, random_init: bool = False, device=DEVICE):
@@ -114,6 +146,7 @@ class pretrained_tap:
         self.head.eval()
         self.head.requires_grad_(False)
         self.alphabet = self.encoder.alphabet
+        self.calibrator = FlagCalibrator.load(_CALIBRATOR_PATH) if not random_init else None
 
     def __call__(self, seqs, batch_size: int = 50) -> TAPResult:
         all_scores = []
@@ -124,4 +157,11 @@ class pretrained_tap:
                 emb, mask = _emb_and_mask(self.encoder, batch, tokens, self.alphabet, self.device)
                 scores = self.head(emb, mask)
             all_scores.append(scores)
-        return TAPResult(torch.cat(all_scores))
+        score_tensor = torch.cat(all_scores)
+
+        flag_probs_array = None
+        if self.calibrator is not None:
+            scores_np = score_tensor.cpu().numpy()
+            flag_probs_array = self.calibrator.predict_proba(scores_np)
+
+        return TAPResult(score_tensor, flag_probs_array)

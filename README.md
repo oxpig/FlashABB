@@ -51,8 +51,10 @@ seqs = [
 ]
 
 result = tap(seqs)
-print(result.scores)    # [{'PSH': ..., 'PPC': ..., 'PNC': ..., 'SFvCSP': ...}]
-print(result.tensor)    # (1, 4) raw score tensor
+print(result.scores)        # [{'PSH': ..., 'PPC': ..., 'PNC': ..., 'SFvCSP': ...}]
+print(result.tensor)        # (1, 4) raw score tensor
+print(result.flag_probs)    # [{'PSH': 0.12, 'PPC': 0.03, 'PNC': 0.05, 'SFvCSP': 0.41}]
+print(result.any_flag_prob) # [0.47]
 ```
 
 ## Structure-aware embeddings (FlashABB-SSS)

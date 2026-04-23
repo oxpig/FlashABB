@@ -49,7 +49,7 @@ def fetch_flash_abb(model_to_use, random_init=False, device='cpu'):
 def fetch_sss(random_init=False, device='cpu'):
     from .model.seq2struct2seq import BERTCoords
 
-    model = BERTCoords()
+    model = BERTCoords(device=device)
     if not random_init:
         weights_path = os.path.join(os.path.dirname(__file__), "weights", "sss_weights.pt")
         ckpt = torch.load(weights_path, map_location=torch.device(device), weights_only=False)
@@ -61,7 +61,7 @@ def fetch_tap(random_init=False, device='cpu'):
     from .model.seq2struct2seq import BERTCoords
     from .model.tap_head import TAPHead
 
-    encoder = BERTCoords()
+    encoder = BERTCoords(device=device)
     head = TAPHead()
     if not random_init:
         weights_path = os.path.join(os.path.dirname(__file__), "weights", "tap_weights.pt")
