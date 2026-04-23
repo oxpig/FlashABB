@@ -38,6 +38,7 @@ class FlashpointAttention(nn.Module):
         inf: float = 1e5,
         eps: float = 1e-8,
         ipa_bias: bool = True,
+        use_spectra=True,
     ):
         """
         Args:
@@ -83,8 +84,9 @@ class FlashpointAttention(nn.Module):
         hpv = self.no_heads * self.no_v_points * 3
 
         self.head_weights = nn.Parameter(torch.zeros((no_heads)))
-        self.rel_pos_dim = 128 # TODO: param
+        self.rel_pos_dim = 128 if use_spectra else 0
         self.rotary_emb = RotaryEmbedding(dim=c_hidden)
+        self.use_spectra = use_spectra
         ipa_point_weights_init_(self.head_weights)
 
         concat_out_dim = self.no_heads * (
@@ -193,9 +195,10 @@ class FlashpointAttention(nn.Module):
         # [*, H, N_res, N_res]
 
         v = rearrange(v, 'b l n d -> b n l d')
-        kv_idx = res_idx % self.rel_pos_dim
-        kv_idx = torch.nn.functional.one_hot(kv_idx, self.rel_pos_dim)
-        v = torch.cat((v, kv_idx[:, None, :, :].expand(v.shape[0], v.shape[1], -1, -1)), dim=-1)
+        if self.use_spectra:
+            kv_idx = res_idx % self.rel_pos_dim
+            kv_idx = torch.nn.functional.one_hot(kv_idx, self.rel_pos_dim)
+            v = torch.cat((v, kv_idx[:, None, :, :].expand(v.shape[0], v.shape[1], -1, -1)), dim=-1)
         attn_mask = self.inf * (mask-1)
         attn_mask = attn_mask[:,None,None,:].to(q.dtype)
         o = F.scaled_dot_product_attention(q, k, v, attn_mask=attn_mask, scale=1.0)
@@ -205,7 +208,10 @@ class FlashpointAttention(nn.Module):
         # Compute output
         ################
         # [*, N_res, H, C_hidden]
-        o, o_pt, o_pos = torch.split(o, [self.c_hidden, 3*8, self.rel_pos_dim], dim=-1) # TODO: params
+        if self.use_spectra:
+            o, o_pt, o_pos = torch.split(o, [self.c_hidden, 3*8, self.rel_pos_dim], dim=-1) # TODO: params
+        else:
+            o, o_pt = torch.split(o, [self.c_hidden, 3*8], dim=-1) # TODO: params
         o_pt = rearrange(o_pt, 'b l h (v_pts d) -> b l h v_pts d', d=3)
 
         # [*, N_res, H * C_hidden]
@@ -221,18 +227,25 @@ class FlashpointAttention(nn.Module):
         # [*, N_res, H * P_v, 3]
         o_pt = o_pt.reshape(*o_pt.shape[:-3], -1, 3)
 
-        # Shift position spectra so it gives relative position
-        pos_idxs = torch.arange(o_pos.shape[-1], device=q.device)[None,:].expand(res_idx.shape[0], -1)
-        q_idx = (res_idx[:, :, None] + pos_idxs[:, None, :]) % self.rel_pos_dim
-        q_idx = q_idx[:, :, None, :].expand(o_pos.shape)
-        o_pos = torch.gather(o_pos, -1, q_idx)
-        o_pos = flatten_final_dims(o_pos, 2)
+        if self.use_spectra:
+            # Shift position spectra so it gives relative position
+            pos_idxs = torch.arange(o_pos.shape[-1], device=q.device)[None,:].expand(res_idx.shape[0], -1)
+            q_idx = (res_idx[:, :, None] + pos_idxs[:, None, :]) % self.rel_pos_dim
+            q_idx = q_idx[:, :, None, :].expand(o_pos.shape)
+            o_pos = torch.gather(o_pos, -1, q_idx)
+            o_pos = flatten_final_dims(o_pos, 2)
 
-        # [*, N_res, C_s]
-        s = self.linear_out(
-            torch.cat((o, *torch.unbind(o_pt, dim=-1), o_pt_norm, o_pos), dim=-1).to(
-                dtype=o.dtype
+            # [*, N_res, C_s]
+            s = self.linear_out(
+                torch.cat((o, *torch.unbind(o_pt, dim=-1), o_pt_norm, o_pos), dim=-1).to(
+                    dtype=o.dtype
+                )
             )
-        )
+        else:
+            s = self.linear_out(
+                torch.cat((o, *torch.unbind(o_pt, dim=-1), o_pt_norm), dim=-1).to(
+                    dtype=o.dtype
+                )
+            )
 
         return s

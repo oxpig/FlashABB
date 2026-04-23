@@ -74,17 +74,18 @@ class FlashABBResult:
         aa_to_mask = residue_constants.STANDARD_ATOM_MASK
         gly_idx = residue_constants.restype_order_with_x['G']
         unk_idx = residue_constants.restype_order_with_x['X']
+        # featurize once for the whole batch (was called per-structure before)
+        features = featurize(self.seqs)
+        os.makedirs(pdb_dir, exist_ok=True)
         for i, name in enumerate(names):
             if idxs is not None and i not in idxs:
                 continue
-            features = featurize(self.seqs)
             residue_idx = features['res_idx'][i].unsqueeze(0)
             aatype = features['aatype'][i].unsqueeze(0)
             # Pretend unknowns are glycines to fill in backbone
             tmp_aatype = aatype.clone()
             tmp_aatype[tmp_aatype==unk_idx] = gly_idx
             coords = self.coords[i]
-            # coords = atom14_to_atom37(coords, aatype)
             coords = atom14_to_atom37(coords, tmp_aatype)
             coords = coords.detach().cpu().numpy()
             residue_idx = residue_idx[0,...].detach().cpu().numpy()
@@ -102,7 +103,5 @@ class FlashABBResult:
                 b_factors=b_factors,
                 chain_index=(residue_idx >= 500).astype(int),
             )
-            pdb_lines = to_pdb(prot)
-            os.makedirs(pdb_dir, exist_ok=True)
-            with open(f'{pdb_dir}/{names[i]}.pdb', 'w') as f:
-                f.write(pdb_lines)
+            with open(f'{pdb_dir}/{name}.pdb', 'w') as f:
+                f.write(to_pdb(prot))

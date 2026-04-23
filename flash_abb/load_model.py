@@ -44,3 +44,32 @@ def fetch_flash_abb(model_to_use, random_init=False, device='cpu'):
         flabb.load_state_dict(ckpt)
 
     return flabb, hparams
+
+
+def fetch_sss(random_init=False, device='cpu'):
+    from .model.seq2struct2seq import BERTCoords
+
+    model = BERTCoords()
+    if not random_init:
+        weights_path = os.path.join(os.path.dirname(__file__), "weights", "sss_weights.pt")
+        ckpt = torch.load(weights_path, map_location=torch.device(device), weights_only=False)
+        model.load_state_dict(ckpt)
+    return model.to(device)
+
+
+def fetch_tap(random_init=False, device='cpu'):
+    from .model.seq2struct2seq import BERTCoords
+    from .model.tap_head import TAPHead
+
+    encoder = BERTCoords()
+    head = TAPHead()
+    if not random_init:
+        weights_path = os.path.join(os.path.dirname(__file__), "weights", "tap_weights.pt")
+        ckpt = torch.load(weights_path, map_location=torch.device(device), weights_only=False)
+        # encoder_state keys have a 'model.' prefix from the training wrapper
+        encoder_state = {k.removeprefix('model.'): v for k, v in ckpt['encoder_state'].items()}
+        encoder.load_state_dict(encoder_state, strict=False)
+        head.load_state_dict(ckpt['head_state'], strict=False)
+        head.tgt_mean.copy_(ckpt['tgt_mean'])
+        head.tgt_std.copy_(ckpt['tgt_std'])
+    return encoder.to(device), head.to(device)
