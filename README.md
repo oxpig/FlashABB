@@ -39,7 +39,7 @@ result.to_pdbs(['ab1', 'ab2'], pdb_dir='sample_preds')
 
 ## Developability scoring (FlashTAP)
 
-FlashTAP predicts four [TAP](https://www.tandfonline.com/doi/full/10.4161/mabs.1.5.9551) developability scores: PSH, PPC, PNC, and SFvCSP.
+FlashTAP predicts four [TAP](https://doi.org/10.1038/s42003-023-05744-8) developability scores: PSH, PPC, PNC, and SFvCSP.
 
 ```python
 from flash_abb import pretrained_tap
