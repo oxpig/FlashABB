@@ -1,4 +1,6 @@
-# Flash-ABB: modelling antibody structures at the speed of language
+# FlashABB: modelling antibody structures at the speed of language
+
+![Inference speed comparison](figures/speedup_multiplier.png)
 
 Installation:
 
