@@ -7,7 +7,7 @@ Installation:
 PyPi coming soon
 
 ```bash
-git clone git@github.com:Ellmen/flash-abb.git
+git clone git@github.com:oxpig/FlashABB.git
 cd flash-abb
 pip install .
 ```
