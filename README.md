@@ -8,7 +8,7 @@ PyPi coming soon
 
 ```bash
 git clone git@github.com:oxpig/FlashABB.git
-cd flash-abb
+cd FlashABB
 pip install .
 ```
 
