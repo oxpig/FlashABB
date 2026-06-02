@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as f:
     
 setup(
     name='flash-abb',
-    version='0.0.1',
+    version='0.0.2',
     license='BSD 3-clause license',
     description='Flash-ABB: modelling antibody structures at the speed of language',
     long_description=long_description,
@@ -17,6 +17,7 @@ setup(
     url="https://github.com/oxpig/FlashABB",
     include_package_data=True,
     packages=find_packages(include=('flash_abb', 'flash_abb.*')),
+    package_data={'flash_abb': ['weights/*']},
     install_requires=[
         'torch>2',
         'requests',
