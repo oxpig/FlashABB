@@ -201,7 +201,13 @@ class FlashpointAttention(nn.Module):
             v = torch.cat((v, kv_idx[:, None, :, :].expand(v.shape[0], v.shape[1], -1, -1)), dim=-1)
         attn_mask = self.inf * (mask-1)
         attn_mask = attn_mask[:,None,None,:].to(q.dtype)
-        o = F.scaled_dot_product_attention(q, k, v, attn_mask=attn_mask, scale=1.0)
+        # MPS scaled_dot_product_attention requires d_q == d_v; here d_q=52, d_v=168.
+        # Fall back to manual matmul+softmax whenever dimensions differ.
+        if q.shape[-1] != v.shape[-1]:
+            attn_weights = torch.matmul(q, k.transpose(-1, -2)) + attn_mask
+            o = torch.matmul(attn_weights.softmax(dim=-1), v)
+        else:
+            o = F.scaled_dot_product_attention(q, k, v, attn_mask=attn_mask, scale=1.0)
         o = rearrange(o, 'b n l d -> b l n d')
 
         ################

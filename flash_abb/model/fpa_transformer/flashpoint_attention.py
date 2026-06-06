@@ -231,7 +231,10 @@ class FlashpointAttention(nn.Module):
         # print(k.shape)
         # print(v.shape)
 
-        if not return_attn_weights:
+        # MPS scaled_dot_product_attention requires d_q == d_v; here d_q != d_v.
+        # Fall back to manual matmul+softmax whenever dimensions differ.
+        _use_manual = (q.shape[-1] != v.shape[-1])
+        if not return_attn_weights and not _use_manual:
             attn_weights = None
             o = F.scaled_dot_product_attention(q, k, v, attn_mask=attn_mask, scale=1.0)
         else:
