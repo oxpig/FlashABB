@@ -5,9 +5,18 @@ from .load_model import load_model
 from .model.flash_abb import featurize, FlashABBResult
 
 
+def _default_device() -> str:
+    if torch.cuda.is_available():
+        return 'cuda'
+    if torch.backends.mps.is_available():
+        return 'mps'
+    return 'cpu'
+
+
 class pretrained:
 
-    def __init__(self, model_to_use="flash-abb", random_init=False, device='cuda'):
+    def __init__(self, model_to_use="flash-abb", random_init=False, device=None):
+        device = device or _default_device()
         super().__init__()
         
         self.used_device = torch.device(device)

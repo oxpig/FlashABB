@@ -5,7 +5,12 @@ from .load_model import fetch_sss, fetch_tap
 from .model.tokenizer import ABtokenizer
 from .model.flag_calibrator import FlagCalibrator
 
-DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+if torch.cuda.is_available():
+    DEVICE = torch.device('cuda')
+elif torch.backends.mps.is_available():
+    DEVICE = torch.device('mps')
+else:
+    DEVICE = torch.device('cpu')
 
 _CALIBRATOR_PATH = os.path.join(os.path.dirname(__file__), 'weights', 'flag_calibrators.pkl')
 

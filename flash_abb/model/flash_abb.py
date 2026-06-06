@@ -19,7 +19,17 @@ def atom14_to_atom37(position, aatype):
     return openfold_atom14_to_atom37(position.cpu(), batch)
 
 
-def featurize(seqs, device=torch.device('cuda')):
+def _default_device() -> torch.device:
+    if torch.cuda.is_available():
+        return torch.device('cuda')
+    if torch.backends.mps.is_available():
+        return torch.device('mps')
+    return torch.device('cpu')
+
+
+def featurize(seqs, device=None):
+    if device is None:
+        device = _default_device()
     features = {}
     clean_seqs = [seq.replace('|', '') for seq in seqs]
     chains = [seq.split('|') for seq in seqs]
@@ -75,7 +85,9 @@ class FlashABBResult:
         gly_idx = residue_constants.restype_order_with_x['G']
         unk_idx = residue_constants.restype_order_with_x['X']
         # featurize once for the whole batch (was called per-structure before)
-        features = featurize(self.seqs)
+        # infer device from stored output so to_pdbs works on any device (MPS, CPU, CUDA)
+        _dev = self.output['positions'].device
+        features = featurize(self.seqs, device=_dev)
         os.makedirs(pdb_dir, exist_ok=True)
         for i, name in enumerate(names):
             if idxs is not None and i not in idxs:
