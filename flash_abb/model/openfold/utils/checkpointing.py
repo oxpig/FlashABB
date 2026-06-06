@@ -20,13 +20,13 @@ if deepspeed_is_installed:
     import deepspeed
 
 import torch
-import torch.utils.checkpoint
 
 BLOCK_ARG = Any
 BLOCK_ARGS = List[BLOCK_ARG]
 
 
 def get_checkpoint_fn():
+    import torch.utils.checkpoint  # deferred: only needed during training
     deepspeed_is_configured = (
         deepspeed_is_installed and deepspeed.checkpointing.is_configured()
     )
