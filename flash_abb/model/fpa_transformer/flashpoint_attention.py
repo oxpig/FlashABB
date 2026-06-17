@@ -4,7 +4,10 @@ from typing import Optional, Sequence, Tuple
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.nn.attention.flex_attention import BlockMask, flex_attention, _score_mod_signature
+try:
+    from torch.nn.attention.flex_attention import BlockMask, flex_attention, _score_mod_signature
+except ImportError:
+    pass  # flex_attention requires PyTorch >= 2.5; unused in the inference path
 
 from einops import rearrange
 from rotary_embedding_torch import RotaryEmbedding
@@ -231,7 +234,10 @@ class FlashpointAttention(nn.Module):
         # print(k.shape)
         # print(v.shape)
 
-        if not return_attn_weights:
+        # MPS scaled_dot_product_attention requires d_q == d_v; here d_q != d_v.
+        # Fall back to manual matmul+softmax whenever dimensions differ.
+        _use_manual = (q.shape[-1] != v.shape[-1])
+        if not return_attn_weights and not _use_manual:
             attn_weights = None
             o = F.scaled_dot_product_attention(q, k, v, attn_mask=attn_mask, scale=1.0)
         else:
