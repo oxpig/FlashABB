@@ -35,7 +35,7 @@ seqs = [
 with torch.no_grad():
     result = flabb(seqs)
 
-print(result.coords.shape)          # (2, n_residues, 37, 3)
+print(result.coords.shape)          # (2, n_residues, 14, 3)
 print(result.bb_coords.shape)       # (2, n_residues, 4, 3)
 
 result.to_pdbs(['ab1', 'ab2'], pdb_dir='sample_preds')
