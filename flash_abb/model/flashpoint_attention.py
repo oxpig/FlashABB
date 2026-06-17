@@ -206,7 +206,8 @@ class FlashpointAttention(nn.Module):
         attn_mask = attn_mask[:,None,None,:].to(q.dtype)
         # MPS scaled_dot_product_attention requires d_q == d_v; here d_q=52, d_v=168.
         # Fall back to manual matmul+softmax whenever dimensions differ.
-        if q.shape[-1] != v.shape[-1]:
+        # TODO: efficient attention for MPS
+        if q.device.type == 'mps' and q.shape[-1] != v.shape[-1]:
             attn_weights = torch.matmul(q, k.transpose(-1, -2)) + attn_mask
             o = torch.matmul(attn_weights.softmax(dim=-1), v)
         else:
