@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as f:
     
 setup(
     name='flash-abb',
-    version='0.0.3',
+    version='0.0.4',
     license='BSD 3-clause license',
     description='FlashABB: modelling antibody structures at the speed of language',
     long_description=long_description,
