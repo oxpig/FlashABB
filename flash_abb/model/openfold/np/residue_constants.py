@@ -453,7 +453,7 @@ def load_stereo_chemical_props() -> Tuple[
     """
     # TODO: this file should be downloaded in a setup script
     stereo_chemical_props = resources.read_text(
-        "flash_abb.openfold.resources", "stereo_chemical_props.txt"
+        "flash_abb.model.openfold.resources", "stereo_chemical_props.txt"
     )
 
     lines_iter = iter(stereo_chemical_props.splitlines())
