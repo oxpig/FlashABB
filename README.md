@@ -20,6 +20,8 @@ pip install .
 
 The following is also in `example.py` and can be used to create the structures in `sample_preds`.
 
+Predictions apply the Dropout-LayerNorm Correction (DLC) by default, which improves accuracy at no extra cost ([preprint](https://arxiv.org/abs/2609.32062)); disable it with `pretrained(dlc_correction=False)`.
+
 ```python
 from flash_abb import pretrained
 import torch
@@ -77,4 +79,22 @@ seqs = [
 result = sss(seqs)
 print(result.embeddings.shape)  # (1, n_residues, 128)
 print(result.mask.shape)        # (1, n_residues)
+```
+
+## Citation
+
+```bibtex
+@article{ellmen_modelling_2026,
+    title = {Modelling antibody structures at the speed of language},
+    author = {Ellmen, Isaac and Errington, David and Raybould, Matthew I. J. and Deane, Charlotte M.},
+    year = {2026},
+    url = {https://www.biorxiv.org/content/10.64898/2026.06.03.729879v1},
+}
+
+@article{ellmen_correcting_2026,
+    title = {Correcting the Dropout-LayerNorm Expectation Gap Improves Protein Structure Models},
+    author = {Ellmen, Isaac and Errington, David and Raybould, Matthew I. J. and Deane, Charlotte M.},
+    year = {2026},
+    url = {https://arxiv.org/abs/2609.32062},
+}
 ```
