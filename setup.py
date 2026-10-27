@@ -19,6 +19,9 @@ setup(
     include_package_data=True,
     packages=find_packages(include=('flash_abb', 'flash_abb.*')),
     package_data={'flash_abb': ['weights/*']},
+    entry_points={'console_scripts': [
+        'flashabb=flash_abb.cli:main',
+    ]},
     install_requires=[
         'torch>2',
         'requests',
@@ -26,6 +29,7 @@ setup(
         'rotary-embedding-torch',
         'ml_collections',
         'numpy',
+        'pandas',
         'dm-tree',
         'pyyaml',
         'scipy',
