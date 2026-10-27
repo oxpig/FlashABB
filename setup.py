@@ -15,6 +15,7 @@ setup(
     maintainer='Isaac Ellmen',
     maintainer_email='isaac.ellmen@stats.ox.ac.uk',
     url="https://github.com/oxpig/FlashABB",
+    python_requires='>=3.10',
     include_package_data=True,
     packages=find_packages(include=('flash_abb', 'flash_abb.*')),
     package_data={'flash_abb': ['weights/*']},
