@@ -33,5 +33,6 @@ setup(
         'dm-tree',
         'pyyaml',
         'scipy',
+        'scikit-learn>=1.8',
     ],
 )
