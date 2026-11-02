@@ -124,6 +124,19 @@ class pretrained_sss:
                 emb, mask = _emb_and_mask(self.sss, batch, tokens, self.alphabet, self.device)
             all_emb.append(emb)
             all_mask.append(mask)
+        # Each micro-batch is padded independently (to its own longest
+        # sequence), so emb/mask tensors across micro-batches can have
+        # different seq_len dims. Pad them all to the global max before
+        # concatenating along the batch dim.
+        max_len = max(e.shape[1] for e in all_emb)
+        all_emb = [
+            torch.nn.functional.pad(e, (0, 0, 0, max_len - e.shape[1]))
+            for e in all_emb
+        ]
+        all_mask = [
+            torch.nn.functional.pad(m, (0, max_len - m.shape[1]), value=False)
+            for m in all_mask
+        ]
         return SSSResult(torch.cat(all_emb), torch.cat(all_mask))
 
 
