@@ -36,4 +36,9 @@ class TAPHead(nn.Module):
         """
         per_res = self.mlp(per_residue_emb)
         summed = (per_res * mask.unsqueeze(-1).float()).sum(dim=1)
-        return summed * self.tgt_std + self.tgt_mean
+        out = summed * self.tgt_std + self.tgt_mean
+        # PPC and PNC (patch sizes) are non-negative by construction; the
+        # unconstrained regression head can predict small negative values.
+        ppc_idx, pnc_idx = self.TAP_COLS.index('PPC'), self.TAP_COLS.index('PNC')
+        out[:, [ppc_idx, pnc_idx]] = out[:, [ppc_idx, pnc_idx]].clamp(min=0.0)
+        return out
