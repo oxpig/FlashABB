@@ -1,0 +1,601 @@
+pdb,method,refold_model,rmsd
+1gaf_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.9884029626846312
+1h0d_B0-A0,AbMPNN-only,"FlashABB (self, discrete)",1.1687391996383667
+1jps_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.9398508667945862
+1t3f_B0-A0,AbMPNN-only,"FlashABB (self, discrete)",0.7635769248008728
+1uj3_B0-A0,AbMPNN-only,"FlashABB (self, discrete)",0.9180863499641418
+2a9m_I0-M0,AbMPNN-only,"FlashABB (self, discrete)",1.73417067527771
+3grw_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.1843891143798828
+3h0t_B0-A0,AbMPNN-only,"FlashABB (self, discrete)",1.2500412464141846
+3lmj_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",2.252751111984253
+3n9g_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.0502575635910034
+3tje_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.9758548736572263
+4buh_A0-A1,AbMPNN-only,"FlashABB (self, discrete)",1.406536102294922
+4d9q_E0-D0,AbMPNN-only,"FlashABB (self, discrete)",1.1026837825775146
+4j6r_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.042687177658081
+4jam_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.6967445611953735
+4lkx_A0-B0,AbMPNN-only,"FlashABB (self, discrete)",1.1467816829681396
+4m6n_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.0764399766921997
+4xvs_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.2249010801315308
+5c6w_H0-H1,AbMPNN-only,"FlashABB (self, discrete)",1.8778020143508911
+5chn_A0-B0,AbMPNN-only,"FlashABB (self, discrete)",1.1730035543441772
+5e8e_B0-A0,AbMPNN-only,"FlashABB (self, discrete)",2.027113914489746
+5fhb_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.424386501312256
+5kzp_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.005578637123108
+5ob5_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.1144665479660034
+5wn9_H0-H1,AbMPNN-only,"FlashABB (self, discrete)",1.2683323621749878
+6blh_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.5337766408920288
+6cr1_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.280010223388672
+6dc4_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.5495131015777588
+6dcv_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.9146769642829896
+6e56_G0-I0,AbMPNN-only,"FlashABB (self, discrete)",2.0226125717163086
+6e65_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.9744635820388794
+6l8t_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.8896569609642029
+6m3b_C0-B0,AbMPNN-only,"FlashABB (self, discrete)",1.5965728759765625
+6mxs_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.1340973377227783
+6o26_A0-B0,AbMPNN-only,"FlashABB (self, discrete)",0.8689059615135193
+6o3a_B0-A0,AbMPNN-only,"FlashABB (self, discrete)",0.911560595035553
+6o3k_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.8150118589401245
+6pzg_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.1480467319488523
+6ss5_HHH0-LLL0,AbMPNN-only,"FlashABB (self, discrete)",0.8489656448364258
+6uce_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.9863726496696472
+6vjt_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.610893964767456
+6wyt_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.197810173034668
+6xjq_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.133927583694458
+6yio_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.020929217338562
+7jkm_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.0545843839645386
+7k8o_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.3334629535675049
+7kfy_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.926064133644104
+7kpg_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.3266022205352783
+7lcv_A0-B0,AbMPNN-only,"FlashABB (self, discrete)",0.9040178060531616
+7n3d_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.1640440225601196
+7neh_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.8919699788093567
+7ps3_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.324097990989685
+7ps4_B0-C0,AbMPNN-only,"FlashABB (self, discrete)",1.022499680519104
+7ps6_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.1225430965423584
+7q0g_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.9996639490127563
+7q4q_D0-C0,AbMPNN-only,"FlashABB (self, discrete)",1.0807909965515137
+7qf0_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.7872010469436646
+7qu1_A0-B0,AbMPNN-only,"FlashABB (self, discrete)",0.8571963906288147
+7raq_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.3072506189346311
+7rp2_H0-I0,AbMPNN-only,"FlashABB (self, discrete)",1.0922282934188845
+7rqq_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.6950714588165283
+7rqr_A0-B0,AbMPNN-only,"FlashABB (self, discrete)",1.8618512153625488
+7rt9_C0-D0,AbMPNN-only,"FlashABB (self, discrete)",1.0777027606964111
+7rxi_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.2346428632736206
+7rxl_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.9758223295211792
+7ryu_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.850619196891785
+7s0j_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.1817299127578735
+7s4g_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.1085487604141235
+7seg_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.9740172028541564
+7sem_B0-C0,AbMPNN-only,"FlashABB (self, discrete)",0.9290516972541808
+7sg5_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.8622537851333618
+7sg6_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.7412548661231995
+7sjs_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.8658719658851624
+7skz_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.0308293104171753
+7sn1_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.4284498691558838
+7so5_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.1129510402679443
+7sts_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.2102940082550049
+7t0i_D0-C0,AbMPNN-only,"FlashABB (self, discrete)",1.2753030061721802
+7t0j_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.9531323313713074
+7tp4_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.9155832529067995
+7ttm_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.1947119235992432
+7u8c_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.198453664779663
+7ucx_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.8658515214920044
+7ue9_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.03246009349823
+7unb_F0-E0,AbMPNN-only,"FlashABB (self, discrete)",1.7628318071365356
+7urq_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.8933021426200867
+7vux_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.8252079486846924
+7vyr_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.9893381595611572
+7wsl_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",0.687471330165863
+7ycl_A0-B0,AbMPNN-only,"FlashABB (self, discrete)",1.1890161037445068
+7z0x_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.541693091392517
+7zf6_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.1224608421325684
+7zwi_B0-C0,AbMPNN-only,"FlashABB (self, discrete)",0.9629710912704468
+8bse_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.0233291387557983
+8byu_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.483163356781006
+8d29_A0-B0,AbMPNN-only,"FlashABB (self, discrete)",0.9854198098182678
+8dy3_A0-A1,AbMPNN-only,"FlashABB (self, discrete)",1.2367230653762815
+8ek6_H0-L0,AbMPNN-only,"FlashABB (self, discrete)",1.6372082233428955
+8f5i_X0-Y0,AbMPNN-only,"FlashABB (self, discrete)",1.1929761171340942
+8f6l_A0-B0,AbMPNN-only,"FlashABB (self, discrete)",1.0923081636428833
+1gaf_H0-L0,AbMPNN-only,Boltz-2 (independent),0.8565880656242371
+1h0d_B0-A0,AbMPNN-only,Boltz-2 (independent),0.7696386575698853
+1jps_H0-L0,AbMPNN-only,Boltz-2 (independent),0.6698318719863892
+1t3f_B0-A0,AbMPNN-only,Boltz-2 (independent),0.7300326228141785
+1uj3_B0-A0,AbMPNN-only,Boltz-2 (independent),0.4962362051010132
+2a9m_I0-M0,AbMPNN-only,Boltz-2 (independent),1.2709019184112549
+3grw_H0-L0,AbMPNN-only,Boltz-2 (independent),0.7898540496826172
+3h0t_B0-A0,AbMPNN-only,Boltz-2 (independent),1.0055811405181885
+3lmj_H0-L0,AbMPNN-only,Boltz-2 (independent),2.099372386932373
+3n9g_H0-L0,AbMPNN-only,Boltz-2 (independent),0.9432976841926576
+3tje_H0-L0,AbMPNN-only,Boltz-2 (independent),1.1916685104370115
+4buh_A0-A1,AbMPNN-only,Boltz-2 (independent),1.8410295248031616
+4d9q_E0-D0,AbMPNN-only,Boltz-2 (independent),0.7994585037231445
+4j6r_H0-L0,AbMPNN-only,Boltz-2 (independent),1.514681100845337
+4jam_H0-L0,AbMPNN-only,Boltz-2 (independent),1.2532089948654177
+4lkx_A0-B0,AbMPNN-only,Boltz-2 (independent),0.9830735325813292
+4m6n_H0-L0,AbMPNN-only,Boltz-2 (independent),0.9626418352127076
+4xvs_H0-L0,AbMPNN-only,Boltz-2 (independent),1.1937233209609983
+5c6w_H0-H1,AbMPNN-only,Boltz-2 (independent),1.1944499015808103
+5chn_A0-B0,AbMPNN-only,Boltz-2 (independent),1.1843678951263428
+5e8e_B0-A0,AbMPNN-only,Boltz-2 (independent),2.190502882003784
+5fhb_H0-L0,AbMPNN-only,Boltz-2 (independent),1.05932354927063
+5kzp_H0-L0,AbMPNN-only,Boltz-2 (independent),0.9281492233276368
+5ob5_H0-L0,AbMPNN-only,Boltz-2 (independent),0.6673110723495483
+5wn9_H0-H1,AbMPNN-only,Boltz-2 (independent),1.1221811771392822
+6blh_H0-L0,AbMPNN-only,Boltz-2 (independent),1.608920931816101
+6cr1_H0-L0,AbMPNN-only,Boltz-2 (independent),0.8512548804283142
+6dc4_H0-L0,AbMPNN-only,Boltz-2 (independent),1.0242151021957395
+6dcv_H0-L0,AbMPNN-only,Boltz-2 (independent),1.0987248420715332
+6e56_G0-I0,AbMPNN-only,Boltz-2 (independent),2.302864789962769
+6e65_H0-L0,AbMPNN-only,Boltz-2 (independent),0.545414388179779
+6l8t_H0-L0,AbMPNN-only,Boltz-2 (independent),0.5463603138923645
+6m3b_C0-B0,AbMPNN-only,Boltz-2 (independent),1.0469472408294678
+6mxs_H0-L0,AbMPNN-only,Boltz-2 (independent),1.1567299365997314
+6o26_A0-B0,AbMPNN-only,Boltz-2 (independent),0.5232564806938171
+6o3a_B0-A0,AbMPNN-only,Boltz-2 (independent),0.9471189379692078
+6o3k_H0-L0,AbMPNN-only,Boltz-2 (independent),1.8138662576675413
+6pzg_H0-L0,AbMPNN-only,Boltz-2 (independent),0.4998759925365448
+6ss5_HHH0-LLL0,AbMPNN-only,Boltz-2 (independent),0.5492491722106934
+6uce_H0-L0,AbMPNN-only,Boltz-2 (independent),0.5322479009628296
+6vjt_H0-L0,AbMPNN-only,Boltz-2 (independent),1.4105372428894043
+6wyt_H0-L0,AbMPNN-only,Boltz-2 (independent),0.814486026763916
+6xjq_H0-L0,AbMPNN-only,Boltz-2 (independent),1.2246826887130735
+6yio_H0-L0,AbMPNN-only,Boltz-2 (independent),1.153542399406433
+7jkm_H0-L0,AbMPNN-only,Boltz-2 (independent),1.393437147140503
+7k8o_H0-L0,AbMPNN-only,Boltz-2 (independent),1.0191115140914917
+7kfy_H0-L0,AbMPNN-only,Boltz-2 (independent),1.2772765159606934
+7kpg_H0-L0,AbMPNN-only,Boltz-2 (independent),0.7458754777908325
+7lcv_A0-B0,AbMPNN-only,Boltz-2 (independent),0.6934704780578613
+7n3d_H0-L0,AbMPNN-only,Boltz-2 (independent),1.238065481185913
+7neh_H0-L0,AbMPNN-only,Boltz-2 (independent),0.7298244833946228
+7ps3_H0-L0,AbMPNN-only,Boltz-2 (independent),1.6823163032531738
+7ps4_B0-C0,AbMPNN-only,Boltz-2 (independent),0.9910467267036438
+7ps6_H0-L0,AbMPNN-only,Boltz-2 (independent),1.1309797763824463
+7q0g_H0-L0,AbMPNN-only,Boltz-2 (independent),0.6380198001861572
+7q4q_D0-C0,AbMPNN-only,Boltz-2 (independent),0.804158627986908
+7qf0_H0-L0,AbMPNN-only,Boltz-2 (independent),0.6698473691940308
+7qu1_A0-B0,AbMPNN-only,Boltz-2 (independent),0.6490514278411865
+7raq_H0-L0,AbMPNN-only,Boltz-2 (independent),1.083898425102234
+7rp2_H0-I0,AbMPNN-only,Boltz-2 (independent),0.857269823551178
+7rqq_H0-L0,AbMPNN-only,Boltz-2 (independent),0.835423469543457
+7rqr_A0-B0,AbMPNN-only,Boltz-2 (independent),0.8379678726196289
+7rt9_C0-D0,AbMPNN-only,Boltz-2 (independent),0.5056412816047668
+7rxi_H0-L0,AbMPNN-only,Boltz-2 (independent),0.9394229650497437
+7rxl_H0-L0,AbMPNN-only,Boltz-2 (independent),0.6262092590332031
+7ryu_H0-L0,AbMPNN-only,Boltz-2 (independent),1.5636136531829834
+7s0j_H0-L0,AbMPNN-only,Boltz-2 (independent),1.9320452213287356
+7s4g_H0-L0,AbMPNN-only,Boltz-2 (independent),0.5925024151802063
+7seg_H0-L0,AbMPNN-only,Boltz-2 (independent),1.0597888231277466
+7sem_B0-C0,AbMPNN-only,Boltz-2 (independent),1.1939557790756226
+7sg5_H0-L0,AbMPNN-only,Boltz-2 (independent),1.2431645393371582
+7sg6_H0-L0,AbMPNN-only,Boltz-2 (independent),1.374098300933838
+7sjs_H0-L0,AbMPNN-only,Boltz-2 (independent),0.5828760266304016
+7skz_H0-L0,AbMPNN-only,Boltz-2 (independent),1.0317881107330322
+7sn1_H0-L0,AbMPNN-only,Boltz-2 (independent),0.6791980266571045
+7so5_H0-L0,AbMPNN-only,Boltz-2 (independent),1.0398496389389038
+7sts_H0-L0,AbMPNN-only,Boltz-2 (independent),1.2490488290786743
+7t0i_D0-C0,AbMPNN-only,Boltz-2 (independent),1.0215439796447754
+7t0j_H0-L0,AbMPNN-only,Boltz-2 (independent),0.7152597308158875
+7tp4_H0-L0,AbMPNN-only,Boltz-2 (independent),1.854811429977417
+7ttm_H0-L0,AbMPNN-only,Boltz-2 (independent),1.489534854888916
+7u8c_H0-L0,AbMPNN-only,Boltz-2 (independent),0.6943078637123108
+7ucx_H0-L0,AbMPNN-only,Boltz-2 (independent),0.7342880368232727
+7ue9_H0-L0,AbMPNN-only,Boltz-2 (independent),0.7382621169090271
+7unb_F0-E0,AbMPNN-only,Boltz-2 (independent),2.205869674682617
+7urq_H0-L0,AbMPNN-only,Boltz-2 (independent),0.9779912829399108
+7vux_H0-L0,AbMPNN-only,Boltz-2 (independent),0.6276776194572449
+7vyr_H0-L0,AbMPNN-only,Boltz-2 (independent),1.026705265045166
+7wsl_H0-L0,AbMPNN-only,Boltz-2 (independent),0.3364721834659576
+7ycl_A0-B0,AbMPNN-only,Boltz-2 (independent),0.9209412336349488
+7z0x_H0-L0,AbMPNN-only,Boltz-2 (independent),2.1566619873046875
+7zf6_H0-L0,AbMPNN-only,Boltz-2 (independent),0.64156574010849
+7zwi_B0-C0,AbMPNN-only,Boltz-2 (independent),0.8453486561775208
+8bse_H0-L0,AbMPNN-only,Boltz-2 (independent),0.9808359146118164
+8byu_H0-L0,AbMPNN-only,Boltz-2 (independent),1.1711972951889038
+8d29_A0-B0,AbMPNN-only,Boltz-2 (independent),0.961058497428894
+8dy3_A0-A1,AbMPNN-only,Boltz-2 (independent),0.7125710844993591
+8ek6_H0-L0,AbMPNN-only,Boltz-2 (independent),1.3652254343032837
+8f5i_X0-Y0,AbMPNN-only,Boltz-2 (independent),1.194250464439392
+8f6l_A0-B0,AbMPNN-only,Boltz-2 (independent),1.2165651321411133
+1gaf_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.9559146165847778
+1h0d_B0-A0,AbMPNN-only,ABB3 (shared lineage),1.4303432703018188
+1jps_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.775651216506958
+1t3f_B0-A0,AbMPNN-only,ABB3 (shared lineage),0.6733266115188599
+1uj3_B0-A0,AbMPNN-only,ABB3 (shared lineage),0.8794453740119934
+2a9m_I0-M0,AbMPNN-only,ABB3 (shared lineage),2.0495283603668213
+3grw_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.340456485748291
+3h0t_B0-A0,AbMPNN-only,ABB3 (shared lineage),1.4607945680618286
+3lmj_H0-L0,AbMPNN-only,ABB3 (shared lineage),2.057947874069214
+3n9g_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.1029887199401855
+3tje_H0-L0,AbMPNN-only,ABB3 (shared lineage),2.0773844718933105
+4buh_A0-A1,AbMPNN-only,ABB3 (shared lineage),1.0832637548446655
+4d9q_E0-D0,AbMPNN-only,ABB3 (shared lineage),1.159672498703003
+4j6r_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.0225991010665894
+4jam_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.4778954982757568
+4lkx_A0-B0,AbMPNN-only,ABB3 (shared lineage),1.072221279144287
+4m6n_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.1218973398208618
+4xvs_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.203931212425232
+5c6w_H0-H1,AbMPNN-only,ABB3 (shared lineage),1.861458659172058
+5chn_A0-B0,AbMPNN-only,ABB3 (shared lineage),1.2592453956604004
+5e8e_B0-A0,AbMPNN-only,ABB3 (shared lineage),1.802224040031433
+5fhb_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.1195061206817627
+5kzp_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.2305152416229248
+5ob5_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.134575605392456
+5wn9_H0-H1,AbMPNN-only,ABB3 (shared lineage),1.298626184463501
+6blh_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.5812560319900513
+6cr1_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.0663785934448242
+6dc4_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.4294692277908323
+6dcv_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.1498667001724243
+6e56_G0-I0,AbMPNN-only,ABB3 (shared lineage),2.5149271488189697
+6e65_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.9978612661361694
+6l8t_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.8526591062545776
+6m3b_C0-B0,AbMPNN-only,ABB3 (shared lineage),1.209602952003479
+6mxs_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.148323655128479
+6o26_A0-B0,AbMPNN-only,ABB3 (shared lineage),0.7729202508926392
+6o3a_B0-A0,AbMPNN-only,ABB3 (shared lineage),1.1048303842544556
+6o3k_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.9687720537185668
+6pzg_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.0613783597946167
+6ss5_HHH0-LLL0,AbMPNN-only,ABB3 (shared lineage),0.9545458555221558
+6uce_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.8212594985961914
+6vjt_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.6821752786636353
+6wyt_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.2394964694976809
+6xjq_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.9625529050827026
+6yio_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.053097128868103
+7jkm_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.161251425743103
+7k8o_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.2597801685333252
+7kfy_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.0339099168777466
+7kpg_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.2488138675689695
+7lcv_A0-B0,AbMPNN-only,ABB3 (shared lineage),1.2180458307266235
+7n3d_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.303566336631775
+7neh_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.84792160987854
+7ps3_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.993089199066162
+7ps4_B0-C0,AbMPNN-only,ABB3 (shared lineage),1.567267894744873
+7ps6_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.0277628898620603
+7q0g_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.2218559980392456
+7q4q_D0-C0,AbMPNN-only,ABB3 (shared lineage),1.031544804573059
+7qf0_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.8606595993041992
+7qu1_A0-B0,AbMPNN-only,ABB3 (shared lineage),0.882849931716919
+7raq_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.1544228792190552
+7rp2_H0-I0,AbMPNN-only,ABB3 (shared lineage),1.1342480182647705
+7rqq_H0-L0,AbMPNN-only,ABB3 (shared lineage),2.101248264312744
+7rqr_A0-B0,AbMPNN-only,ABB3 (shared lineage),1.766485571861267
+7rt9_C0-D0,AbMPNN-only,ABB3 (shared lineage),0.909417688846588
+7rxi_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.4597870111465454
+7rxl_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.9400137662887572
+7ryu_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.8932991027832031
+7s0j_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.2358036041259766
+7s4g_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.055148005485535
+7seg_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.1258281469345093
+7sem_B0-C0,AbMPNN-only,ABB3 (shared lineage),1.1771955490112305
+7sg5_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.8719500303268433
+7sg6_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.9075279235839844
+7sjs_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.9781934022903442
+7skz_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.237450361251831
+7sn1_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.4373844861984253
+7so5_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.8405157327651975
+7sts_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.228217363357544
+7t0i_D0-C0,AbMPNN-only,ABB3 (shared lineage),1.0125364065170288
+7t0j_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.167818307876587
+7tp4_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.5930105447769165
+7ttm_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.393768310546875
+7u8c_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.954956829547882
+7ucx_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.8318779468536377
+7ue9_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.031477451324463
+7unb_F0-E0,AbMPNN-only,ABB3 (shared lineage),1.6592912673950195
+7urq_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.9300594925880432
+7vux_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.8122275471687317
+7vyr_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.8333396911621094
+7wsl_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.7252206206321716
+7ycl_A0-B0,AbMPNN-only,ABB3 (shared lineage),1.048171877861023
+7z0x_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.7663354873657229
+7zf6_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.961625337600708
+7zwi_B0-C0,AbMPNN-only,ABB3 (shared lineage),0.9755842089653016
+8bse_H0-L0,AbMPNN-only,ABB3 (shared lineage),0.9574806690216064
+8byu_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.35610032081604
+8d29_A0-B0,AbMPNN-only,ABB3 (shared lineage),1.185715913772583
+8dy3_A0-A1,AbMPNN-only,ABB3 (shared lineage),1.130100131034851
+8ek6_H0-L0,AbMPNN-only,ABB3 (shared lineage),1.6442495584487915
+8f5i_X0-Y0,AbMPNN-only,ABB3 (shared lineage),1.286497712135315
+8f6l_A0-B0,AbMPNN-only,ABB3 (shared lineage),1.1037018299102783
+1gaf_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.8939055800437927
+1h0d_B0-A0,FlashABB-optimized,"FlashABB (self, discrete)",0.7728734016418457
+1jps_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.8293728828430176
+1t3f_B0-A0,FlashABB-optimized,"FlashABB (self, discrete)",0.6618142127990723
+1uj3_B0-A0,FlashABB-optimized,"FlashABB (self, discrete)",0.7878931164741516
+2a9m_I0-M0,FlashABB-optimized,"FlashABB (self, discrete)",1.150100827217102
+3grw_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.257515549659729
+3h0t_B0-A0,FlashABB-optimized,"FlashABB (self, discrete)",1.0880718231201172
+3lmj_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.962342381477356
+3n9g_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.9738958477973938
+3tje_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.543920874595642
+4buh_A0-A1,FlashABB-optimized,"FlashABB (self, discrete)",1.7704472541809082
+4d9q_E0-D0,FlashABB-optimized,"FlashABB (self, discrete)",0.832240641117096
+4j6r_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.8650851249694824
+4jam_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.4620072841644287
+4lkx_A0-B0,FlashABB-optimized,"FlashABB (self, discrete)",1.1151831150054932
+4m6n_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.9631532430648804
+4xvs_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.0568910837173462
+5c6w_H0-H1,FlashABB-optimized,"FlashABB (self, discrete)",1.5567150115966797
+5chn_A0-B0,FlashABB-optimized,"FlashABB (self, discrete)",1.0021919012069702
+5e8e_B0-A0,FlashABB-optimized,"FlashABB (self, discrete)",1.5221713781356812
+5fhb_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.1095811128616333
+5kzp_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.7571897506713867
+5ob5_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.9576128125190736
+5wn9_H0-H1,FlashABB-optimized,"FlashABB (self, discrete)",1.0007961988449097
+6blh_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.0750375986099243
+6cr1_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.031627893447876
+6dc4_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.384059190750122
+6dcv_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.8299217224121094
+6e56_G0-I0,FlashABB-optimized,"FlashABB (self, discrete)",1.9113510847091677
+6e65_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.0084384679794312
+6l8t_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.82245934009552
+6m3b_C0-B0,FlashABB-optimized,"FlashABB (self, discrete)",0.9186256527900696
+6mxs_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.076282024383545
+6o26_A0-B0,FlashABB-optimized,"FlashABB (self, discrete)",0.8214570879936218
+6o3a_B0-A0,FlashABB-optimized,"FlashABB (self, discrete)",0.8032480478286743
+6o3k_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.7035096287727356
+6pzg_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.9779697060585022
+6ss5_HHH0-LLL0,FlashABB-optimized,"FlashABB (self, discrete)",0.7878595590591431
+6uce_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.7285321950912476
+6vjt_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.559900999069214
+6wyt_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.2333850860595703
+6xjq_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.9741761684417723
+6yio_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.003192663192749
+7jkm_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.0289306640625
+7k8o_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.0304043292999268
+7kfy_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.8415881395339966
+7kpg_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.2656265497207642
+7lcv_A0-B0,FlashABB-optimized,"FlashABB (self, discrete)",0.7879445552825928
+7n3d_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.055270791053772
+7neh_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.7538470029830933
+7ps3_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.2754641771316528
+7ps4_B0-C0,FlashABB-optimized,"FlashABB (self, discrete)",0.8391196727752686
+7ps6_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.1252875328063965
+7q0g_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.9913058280944824
+7q4q_D0-C0,FlashABB-optimized,"FlashABB (self, discrete)",0.9958027601242064
+7qf0_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.7494000792503357
+7qu1_A0-B0,FlashABB-optimized,"FlashABB (self, discrete)",0.7690699696540833
+7raq_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.0910686254501345
+7rp2_H0-I0,FlashABB-optimized,"FlashABB (self, discrete)",1.1009635925292969
+7rqq_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.4402544498443604
+7rqr_A0-B0,FlashABB-optimized,"FlashABB (self, discrete)",1.220434546470642
+7rt9_C0-D0,FlashABB-optimized,"FlashABB (self, discrete)",0.8665772080421448
+7rxi_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.103319764137268
+7rxl_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.9312394857406616
+7ryu_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.557382583618164
+7s0j_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.8985470533370972
+7s4g_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.9684004783630372
+7seg_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.8239903450012207
+7sem_B0-C0,FlashABB-optimized,"FlashABB (self, discrete)",0.8023554086685181
+7sg5_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.6981077194213867
+7sg6_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.7206453084945679
+7sjs_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.7530044317245483
+7skz_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.9190844893455504
+7sn1_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.9908607602119446
+7so5_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.8988558650016785
+7sts_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.8612558245658875
+7t0i_D0-C0,FlashABB-optimized,"FlashABB (self, discrete)",1.0510746240615845
+7t0j_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.7896215915679932
+7tp4_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.149670958518982
+7ttm_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.165903091430664
+7u8c_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.5433937311172483
+7ucx_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.7879603505134583
+7ue9_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.8489876985549927
+7unb_F0-E0,FlashABB-optimized,"FlashABB (self, discrete)",1.467750072479248
+7urq_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.8663510084152222
+7vux_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.7836486101150513
+7vyr_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.91847562789917
+7wsl_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.6891922354698181
+7ycl_A0-B0,FlashABB-optimized,"FlashABB (self, discrete)",0.9102517366409302
+7z0x_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.3877737522125244
+7zf6_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.9762542843818665
+7zwi_B0-C0,FlashABB-optimized,"FlashABB (self, discrete)",0.8798342347145081
+8bse_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",0.9101576805114746
+8byu_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.3573554754257202
+8d29_A0-B0,FlashABB-optimized,"FlashABB (self, discrete)",0.9417265057563782
+8dy3_A0-A1,FlashABB-optimized,"FlashABB (self, discrete)",1.0763980150222778
+8ek6_H0-L0,FlashABB-optimized,"FlashABB (self, discrete)",1.0424185991287231
+8f5i_X0-Y0,FlashABB-optimized,"FlashABB (self, discrete)",1.0982286930084229
+8f6l_A0-B0,FlashABB-optimized,"FlashABB (self, discrete)",0.9549193978309632
+1gaf_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.95087069272995
+1h0d_B0-A0,FlashABB-optimized,Boltz-2 (independent),0.5541432499885559
+1jps_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.5352164506912231
+1t3f_B0-A0,FlashABB-optimized,Boltz-2 (independent),0.6342206597328186
+1uj3_B0-A0,FlashABB-optimized,Boltz-2 (independent),0.5615699887275696
+2a9m_I0-M0,FlashABB-optimized,Boltz-2 (independent),1.269411563873291
+3grw_H0-L0,FlashABB-optimized,Boltz-2 (independent),2.1173341274261475
+3h0t_B0-A0,FlashABB-optimized,Boltz-2 (independent),1.0272891521453855
+3lmj_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.8428921699523928
+3n9g_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.7664125561714172
+3tje_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.3090417385101318
+4buh_A0-A1,FlashABB-optimized,Boltz-2 (independent),1.885168194770813
+4d9q_E0-D0,FlashABB-optimized,Boltz-2 (independent),1.0186285972595217
+4j6r_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.8161803483963013
+4jam_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.2458757162094116
+4lkx_A0-B0,FlashABB-optimized,Boltz-2 (independent),0.9536438584327698
+4m6n_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.076218843460083
+4xvs_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.0225305557250977
+5c6w_H0-H1,FlashABB-optimized,Boltz-2 (independent),1.1613537073135376
+5chn_A0-B0,FlashABB-optimized,Boltz-2 (independent),1.4569233655929563
+5e8e_B0-A0,FlashABB-optimized,Boltz-2 (independent),1.0680879354476929
+5fhb_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.9072129130363464
+5kzp_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.5582901239395142
+5ob5_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.8777947425842285
+5wn9_H0-H1,FlashABB-optimized,Boltz-2 (independent),1.127274751663208
+6blh_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.8496956825256348
+6cr1_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.7169955968856812
+6dc4_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.8691218495368958
+6dcv_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.060341238975525
+6e56_G0-I0,FlashABB-optimized,Boltz-2 (independent),2.001098871231079
+6e65_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.5874145030975342
+6l8t_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.5098072290420532
+6m3b_C0-B0,FlashABB-optimized,Boltz-2 (independent),0.7343629598617554
+6mxs_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.007485032081604
+6o26_A0-B0,FlashABB-optimized,Boltz-2 (independent),0.5065984129905701
+6o3a_B0-A0,FlashABB-optimized,Boltz-2 (independent),0.8163993954658508
+6o3k_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.5361506342887878
+6pzg_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.6551234126091003
+6ss5_HHH0-LLL0,FlashABB-optimized,Boltz-2 (independent),0.6004945635795593
+6uce_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.6051720976829529
+6vjt_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.4324836730957031
+6wyt_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.9001421332359314
+6xjq_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.8461858034133911
+6yio_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.9596944451332092
+7jkm_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.369906306266785
+7k8o_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.4844242334365845
+7kfy_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.2655357122421265
+7kpg_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.9565857648849488
+7lcv_A0-B0,FlashABB-optimized,Boltz-2 (independent),0.7554281949996948
+7n3d_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.2506098747253418
+7neh_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.058580756187439
+7ps3_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.693131446838379
+7ps4_B0-C0,FlashABB-optimized,Boltz-2 (independent),0.7228878736495972
+7ps6_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.305567502975464
+7q0g_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.1362544298171997
+7q4q_D0-C0,FlashABB-optimized,Boltz-2 (independent),0.6309425830841064
+7qf0_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.6985099911689758
+7qu1_A0-B0,FlashABB-optimized,Boltz-2 (independent),0.6032202839851379
+7raq_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.6815616488456726
+7rp2_H0-I0,FlashABB-optimized,Boltz-2 (independent),1.4119256734848022
+7rqq_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.7984666228294373
+7rqr_A0-B0,FlashABB-optimized,Boltz-2 (independent),1.7191158533096311
+7rt9_C0-D0,FlashABB-optimized,Boltz-2 (independent),0.5997974872589111
+7rxi_H0-L0,FlashABB-optimized,Boltz-2 (independent),2.9146323204040527
+7rxl_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.8057404160499573
+7ryu_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.490612506866455
+7s0j_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.7524783611297607
+7s4g_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.6426397562026978
+7seg_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.9191606640815736
+7sem_B0-C0,FlashABB-optimized,Boltz-2 (independent),1.1835861206054688
+7sg5_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.7171409130096436
+7sg6_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.258794903755188
+7sjs_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.5996804237365723
+7skz_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.9595725536346436
+7sn1_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.1334717273712158
+7so5_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.453673005104065
+7sts_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.038414716720581
+7t0i_D0-C0,FlashABB-optimized,Boltz-2 (independent),1.2582722902297974
+7t0j_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.6307799816131592
+7tp4_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.6491074562072754
+7ttm_H0-L0,FlashABB-optimized,Boltz-2 (independent),2.083404064178467
+7u8c_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.7664051651954651
+7ucx_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.5962409377098083
+7ue9_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.7561061382293701
+7unb_F0-E0,FlashABB-optimized,Boltz-2 (independent),2.300598382949829
+7urq_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.9612756371498108
+7vux_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.5644674301147461
+7vyr_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.8788314461708069
+7wsl_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.3723626434803009
+7ycl_A0-B0,FlashABB-optimized,Boltz-2 (independent),0.9879589080810548
+7z0x_H0-L0,FlashABB-optimized,Boltz-2 (independent),2.2818679809570312
+7zf6_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.6148550510406494
+7zwi_B0-C0,FlashABB-optimized,Boltz-2 (independent),0.5247490406036377
+8bse_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.6769741773605347
+8byu_H0-L0,FlashABB-optimized,Boltz-2 (independent),0.9923886656761168
+8d29_A0-B0,FlashABB-optimized,Boltz-2 (independent),0.7725365161895752
+8dy3_A0-A1,FlashABB-optimized,Boltz-2 (independent),0.8332724571228027
+8ek6_H0-L0,FlashABB-optimized,Boltz-2 (independent),1.1760631799697876
+8f5i_X0-Y0,FlashABB-optimized,Boltz-2 (independent),0.980766534805298
+8f6l_A0-B0,FlashABB-optimized,Boltz-2 (independent),2.603039503097534
+1gaf_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.9302896857261658
+1h0d_B0-A0,FlashABB-optimized,ABB3 (shared lineage),1.2349748611450195
+1jps_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.7623676657676697
+1t3f_B0-A0,FlashABB-optimized,ABB3 (shared lineage),0.6993287801742554
+1uj3_B0-A0,FlashABB-optimized,ABB3 (shared lineage),1.0727803707122805
+2a9m_I0-M0,FlashABB-optimized,ABB3 (shared lineage),1.7686773538589478
+3grw_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.386086344718933
+3h0t_B0-A0,FlashABB-optimized,ABB3 (shared lineage),1.3457177877426147
+3lmj_H0-L0,FlashABB-optimized,ABB3 (shared lineage),2.310722827911377
+3n9g_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.2202953100204468
+3tje_H0-L0,FlashABB-optimized,ABB3 (shared lineage),3.524489402770996
+4buh_A0-A1,FlashABB-optimized,ABB3 (shared lineage),1.278744101524353
+4d9q_E0-D0,FlashABB-optimized,ABB3 (shared lineage),1.1279538869857788
+4j6r_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.9445980787277222
+4jam_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.3739804029464722
+4lkx_A0-B0,FlashABB-optimized,ABB3 (shared lineage),1.0831862688064575
+4m6n_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.2277488708496094
+4xvs_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.1682010889053345
+5c6w_H0-H1,FlashABB-optimized,ABB3 (shared lineage),1.832458734512329
+5chn_A0-B0,FlashABB-optimized,ABB3 (shared lineage),1.2771879434585571
+5e8e_B0-A0,FlashABB-optimized,ABB3 (shared lineage),1.5967276096343994
+5fhb_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.0340709686279297
+5kzp_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.2615529298782349
+5ob5_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.0796939134597778
+5wn9_H0-H1,FlashABB-optimized,ABB3 (shared lineage),1.7134157419204712
+6blh_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.4234774112701416
+6cr1_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.9167271256446838
+6dc4_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.443479061126709
+6dcv_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.016067624092102
+6e56_G0-I0,FlashABB-optimized,ABB3 (shared lineage),2.3183703422546387
+6e65_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.0084216594696045
+6l8t_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.8841745853424072
+6m3b_C0-B0,FlashABB-optimized,ABB3 (shared lineage),1.1751590967178345
+6mxs_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.2168211936950684
+6o26_A0-B0,FlashABB-optimized,ABB3 (shared lineage),0.7770411372184753
+6o3a_B0-A0,FlashABB-optimized,ABB3 (shared lineage),1.0603628158569336
+6o3k_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.8711643218994141
+6pzg_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.9880695939064026
+6ss5_HHH0-LLL0,FlashABB-optimized,ABB3 (shared lineage),0.910461127758026
+6uce_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.7871427536010742
+6vjt_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.681009292602539
+6wyt_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.5944749116897583
+6xjq_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.038411259651184
+6yio_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.126155972480774
+7jkm_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.1689717769622805
+7k8o_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.1706172227859497
+7kfy_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.9844233393669128
+7kpg_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.289111852645874
+7lcv_A0-B0,FlashABB-optimized,ABB3 (shared lineage),1.2822967767715454
+7n3d_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.3297841548919678
+7neh_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.9166219830513
+7ps3_H0-L0,FlashABB-optimized,ABB3 (shared lineage),2.034769296646118
+7ps4_B0-C0,FlashABB-optimized,ABB3 (shared lineage),1.4102776050567627
+7ps6_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.0288416147232056
+7q0g_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.1782821416854858
+7q4q_D0-C0,FlashABB-optimized,ABB3 (shared lineage),1.1014212369918823
+7qf0_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.0281537771224976
+7qu1_A0-B0,FlashABB-optimized,ABB3 (shared lineage),0.8992677927017212
+7raq_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.1415705680847168
+7rp2_H0-I0,FlashABB-optimized,ABB3 (shared lineage),1.2377502918243408
+7rqq_H0-L0,FlashABB-optimized,ABB3 (shared lineage),2.2370169162750244
+7rqr_A0-B0,FlashABB-optimized,ABB3 (shared lineage),2.094766855239868
+7rt9_C0-D0,FlashABB-optimized,ABB3 (shared lineage),0.9309791326522828
+7rxi_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.5131738185882568
+7rxl_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.952022671699524
+7ryu_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.793412208557129
+7s0j_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.2824965715408323
+7s4g_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.204580307006836
+7seg_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.7128006219863892
+7sem_B0-C0,FlashABB-optimized,ABB3 (shared lineage),1.4494730234146118
+7sg5_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.8923884034156799
+7sg6_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.9275385737419128
+7sjs_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.9118173718452454
+7skz_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.3513602018356323
+7sn1_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.104860544204712
+7so5_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.976655960083008
+7sts_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.2728629112243652
+7t0i_D0-C0,FlashABB-optimized,ABB3 (shared lineage),0.9986466765403748
+7t0j_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.0999783277511597
+7tp4_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.5582422018051147
+7ttm_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.4171583652496338
+7u8c_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.8560420274734497
+7ucx_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.7970864176750183
+7ue9_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.0100082159042358
+7unb_F0-E0,FlashABB-optimized,ABB3 (shared lineage),1.707256555557251
+7urq_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.934581995010376
+7vux_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.8331174850463867
+7vyr_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.8553765416145325
+7wsl_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.7240217924118042
+7ycl_A0-B0,FlashABB-optimized,ABB3 (shared lineage),1.0585530996322632
+7z0x_H0-L0,FlashABB-optimized,ABB3 (shared lineage),2.0895533561706543
+7zf6_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.9681065082550048
+7zwi_B0-C0,FlashABB-optimized,ABB3 (shared lineage),0.9271467328071594
+8bse_H0-L0,FlashABB-optimized,ABB3 (shared lineage),0.9956856369972228
+8byu_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.4165105819702148
+8d29_A0-B0,FlashABB-optimized,ABB3 (shared lineage),1.1077526807785034
+8dy3_A0-A1,FlashABB-optimized,ABB3 (shared lineage),1.2194266319274902
+8ek6_H0-L0,FlashABB-optimized,ABB3 (shared lineage),1.26447331905365
+8f5i_X0-Y0,FlashABB-optimized,ABB3 (shared lineage),1.2629514932632446
+8f6l_A0-B0,FlashABB-optimized,ABB3 (shared lineage),1.3863062858581543
